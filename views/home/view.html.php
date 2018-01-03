@@ -5,7 +5,7 @@
  * @version        3.x
  * @package        JUHome
  * @author         Denys D. Nosov (denys@joomla-ua.org)
- * @copyright (C)  2011-2017 by Denys D. Nosov (https://joomla-ua.org)
+ * @copyright (C)  2011-2018 by Denys D. Nosov (https://joomla-ua.org)
  * @license        GNU General Public License version 2 or later
  *
  **/
@@ -30,11 +30,7 @@ class HomeViewHome extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		$app = JFactory::getApplication();
-
-		$menus = $app->getMenu();
-		$menu  = $menus->getActive();
-
+		$app    = JFactory::getApplication();
 		$params = $app->getParams();
 
 		$show_title = $params->get('show_page_heading');
@@ -66,17 +62,14 @@ class HomeViewHome extends JViewLegacy
 			$this->document->setMetadata('robots', $params->get('robots'));
 		}
 
-		$home = new stdClass();
-
 		$template   = trim($params->get('template', ''));
 		$layoutpath = JPATH_SITE . '/components/com_home/views/home/tmpl/' . $template;
 
+		$home                = new stdClass();
 		$home->mod_name_pref = trim($params->get('mod_name_pref', ''));
 		$home->style         = trim($params->get('style', ''));
 
-		//Escape strings for HTML output
 		$this->pageclass_sfx = htmlspecialchars($params->get('pageclass_sfx'));
-
 		$this->assignRef('params', $params);
 
 		$pos = JFactory::getApplication()->input->post->get('pos');
@@ -92,6 +85,8 @@ class HomeViewHome extends JViewLegacy
 			if(file_exists($layoutpath))
 			{
 				require($layoutpath);
+
+				return true;
 			}
 			else
 			{
