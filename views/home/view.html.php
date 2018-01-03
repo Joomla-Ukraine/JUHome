@@ -79,12 +79,12 @@ class HomeViewHome extends JViewLegacy
 
 		$this->assignRef('params', $params);
 
-		$pos = JFactory::getApplication()->input->set('pos');
+		$pos = JFactory::getApplication()->input->post->get('pos');
 
 		if($pos)
 		{
-			JFactory::getApplication()->input->set('tmpl', 'none');
-			echo HomeViewHome::LoadPositionForHome($pos, $style = 'raw');
+			JFactory::getApplication()->input->post->get('tmpl', 'none');
+			$html = HomeViewHome::LoadPositionForHome($pos, $style = 'raw');
 		}
 		else
 		{
@@ -95,10 +95,12 @@ class HomeViewHome extends JViewLegacy
 			}
 			else
 			{
-				echo JText::_("<strong>Template <span style=\"color: green;\">$template</span> do is not found!</strong><br />Please, upload new template to <em>components/com_home/views/home/tmpl</em> folder or select other template from back-end!");
+				$html = JText::_("<strong>Template <span style=\"color: green;\">$template</span> do is not found!</strong><br />Please, upload new template to <em>components/com_home/views/home/tmpl</em> folder or select other template from back-end!");
 			}
 
 		}
+
+		return $html;
 	}
 
 	/**
