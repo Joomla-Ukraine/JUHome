@@ -34,7 +34,6 @@ class HomeController extends JControllerLegacy
 		$app    = JFactory::getApplication();
 		$params = $app->getParams();
 
-		$cachable = false;
 		if($params->get('cache_home', '0') == 1)
 		{
 			$cachable = true;

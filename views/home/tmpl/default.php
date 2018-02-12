@@ -18,4 +18,4 @@ if($params->get('display_title'))
 	echo '<h1>' . $params->get('page_title') . '</h1>';
 }
 
-echo HomeViewHome::LoadPositionForHome($home->mod_name_pref, $style = ($home->style ? $home->style : 'raw'));
+echo HomeViewHome::LoadPositionForHome($home->mod_name_pref, $style = ($home->style ? : 'raw'));

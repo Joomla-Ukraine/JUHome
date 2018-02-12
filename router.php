@@ -8,7 +8,10 @@
  * @copyright (C)  2011-2018 by Denys D. Nosov (https://joomla-ua.org)
  * @license        GNU General Public License version 2 or later
  *
- **/
+ * @param $query
+ *
+ * @return array
+ */
 
 function homeBuildRoute(&$query)
 {
@@ -23,13 +26,11 @@ function homeBuildRoute(&$query)
 }
 
 /**
- * @param $segments
- *
  * @return array
  *
  * @since 3.0
  */
-function homeParseRoute($segments)
+function homeParseRoute()
 {
 	$vars = array();
 

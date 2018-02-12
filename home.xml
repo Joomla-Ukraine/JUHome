@@ -2,12 +2,12 @@
 <extension type="component" version="2.5" method="upgrade">
 	<name>home</name>
 	<author>Denys Nosov</author>
-	<creationDate>03.01.2018</creationDate>
+	<creationDate>12.02.2018</creationDate>
 	<copyright>(C) 2011-2018 Joomla! Ukraine. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>denys@joomla-ua.org</authorEmail>
 	<authorUrl>https://joomla-ua.org</authorUrl>
-	<version>3.0.1</version>
+	<version>3.0.2</version>
 	<description>Home - component for display modules and create Home Page</description>
 	<files>
 		<filename>controller.php</filename>
