@@ -1,2 +1,2 @@
 # JUHome
-Component for custom FronPage
+Component for custom FrontPage

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-    <layout title="Home" option="Default with select templates">
+    <layout title="Home"
+            option="Default with select templates">
         <help
-                key="Menus_Menu_Item_Home"
+		        key="Menus_Menu_Item_Home"
         />
         <message>
             <![CDATA[COM_HOME_HOME_VIEW_DEFAULT_DESC]]>
@@ -11,53 +12,54 @@
 
     <fields name="params">
 
-        <fieldset name="request" label="COM_MENUS_BASIC_FIELDSET_LABEL">
+        <fieldset name="request"
+                  label="COM_MENUS_BASIC_FIELDSET_LABEL">
 
             <field
-                    name="cache_home"
-                    type="radio"
-                    default="0"
-                    label="Cache page"
-                    class="btn-group"
+		            name="cache_home"
+		            type="radio"
+		            default="0"
+		            label="Cache page"
+		            class="btn-group"
             >
                 <option value="1">JYES</option>
                 <option value="0">JNO</option>
             </field>
 
             <field
-                    name="mod_name_pref"
-                    type="text"
-                    label="Module name pref."
-                    size="20"
+		            name="mod_name_pref"
+		            type="text"
+		            label="Module name pref."
+		            size="20"
             />
 
             <field
-                    name="style"
-                    type="text"
-                    label="Module style"
-                    size="20"
+		            name="style"
+		            type="text"
+		            label="Module style"
+		            size="20"
             />
 
             <field
-                    name="template"
-                    type="filelist"
-                    default="default.php"
-                    label="Template"
-                    directory="components/com_home/views/home/tmpl"
-                    filter="\.php$"
-                    stripext="0"
-                    hide_none="1"
-                    hide_default="1"
-                    description="Select your template from list. You'll create template and upload to /components/com_home/views/home/tmpl folder"
+		            name="template"
+		            type="filelist"
+		            default="default.php"
+		            label="Template"
+		            directory="components/com_home/views/home/tmpl"
+		            filter="\.php$"
+		            stripext="0"
+		            hide_none="1"
+		            hide_default="1"
+		            description="Select your template from list. You'll create template and upload to /components/com_home/views/home/tmpl folder"
             >
             </field>
 
             <field
-                    name="display_title"
-                    type="radio"
-                    default="0"
-                    label="Display title"
-                    class="btn-group"
+		            name="display_title"
+		            type="radio"
+		            default="0"
+		            label="Display title"
+		            class="btn-group"
             >
                 <option value="1">JYES</option>
                 <option value="0">JNO</option>
