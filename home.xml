@@ -2,16 +2,17 @@
 <extension type="component" version="3.5" method="upgrade">
 	<name>home</name>
 	<author>Denys Nosov</author>
-	<creationDate>02.17.2019</creationDate>
-	<copyright>(C) 2011-2019 Joomla! Ukraine. All rights reserved.</copyright>
+	<creationDate>20.04.2020</creationDate>
+	<copyright>(C) 2011-2020 Joomla! Ukraine. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>denys@joomla-ua.org</authorEmail>
 	<authorUrl>https://joomla-ua.org</authorUrl>
-	<version>3.2.0</version>
+	<version>3.2.1</version>
 	<description>Home - component for display modules and create Home Page</description>
 	<files>
 		<filename>controller.php</filename>
 		<filename>metadata.xml</filename>
+		<filename>index.html</filename>
 		<filename>router.php</filename>
 		<filename>home.php</filename>
 		<filename>home.xml</filename>
