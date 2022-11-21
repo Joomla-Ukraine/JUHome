@@ -77,7 +77,7 @@ class HomeViewHome extends HtmlView
 		$template   = trim($this->params->get('template', ''));
 		$layoutpath = JPATH_SITE . '/components/com_home/views/home/tmpl/' . $template;
 
-		$home                = new stdClass();
+		$home                = new \stdClass();
 		$home->mod_name_pref = trim($this->params->get('mod_name_pref', ''));
 		$home->style         = trim($this->params->get('style', ''));
 
