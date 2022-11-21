@@ -1,2 +1,2 @@
 # JUHome
-Component for custom FrontPage
+Component for custom Joomla Front Page
