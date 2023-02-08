@@ -41,6 +41,8 @@ class HomeViewHome extends HtmlView
 	 */
 	public function display($tpl = null)
 	{
+		parent::display($tpl);
+
 		$show_title = $this->params->get('show_page_heading');
 		$title      = $this->params->get('page_title', '');
 
@@ -77,7 +79,7 @@ class HomeViewHome extends HtmlView
 		$template   = trim($this->params->get('template', ''));
 		$layoutpath = JPATH_SITE . '/components/com_home/views/home/tmpl/' . $template;
 
-		$home                = new \stdClass();
+		$home                = new stdClass();
 		$home->mod_name_pref = trim($this->params->get('mod_name_pref', ''));
 		$home->style         = trim($this->params->get('style', ''));
 
@@ -105,13 +107,13 @@ class HomeViewHome extends HtmlView
 
 	/**
 	 * @param     $position
-	 * @param int $style
+	 * @param   int  $style
 	 *
 	 * @return string
 	 *
 	 * @since 3.0
 	 */
-	public function LoadPositionForHome($position, $style = -2)
+	public function LoadPositionForHome($position, int $style = -2)
 	{
 		$renderer = $this->doc->loadRenderer('module');
 		$params   = [ 'style' => $style ];

@@ -1,12 +1,12 @@
 <?php
 /**
- * @package        JUHome Component
+ * @since          3.0
  * @version        3.x
  * @author         Denys D. Nosov (denys@joomla-ua.org)
  * @copyright (C)  2011-2020 by Denys D. Nosov (https://joomla-ua.org)
  * @license        GNU General Public License version 2 or later
  *
- * @since          3.0
+ * @package        JUHome Component
  */
 
 use Joomla\CMS\Component\Router\RouterView;
@@ -15,20 +15,7 @@ defined('_JEXEC') or die;
 
 class HomeRouter extends RouterView
 {
-	protected $noIDs = false;
-
-	/**
-	 * HomeRouter constructor.
-	 *
-	 * @param null $app
-	 * @param null $menu
-	 *
-	 * @since 1.0
-	 */
-	public function __construct($app = null, $menu = null)
-	{
-		parent::__construct($app, $menu);
-	}
+	protected bool $noIDs = false;
 
 	/**
 	 * @param $query
@@ -39,6 +26,7 @@ class HomeRouter extends RouterView
 	 */
 	public function build(&$query)
 	{
+		parent::build($query);
 		if(isset($query[ 'view' ]))
 		{
 			unset($query[ 'view' ]);
@@ -56,6 +44,7 @@ class HomeRouter extends RouterView
 	 */
 	public function parse(&$segments)
 	{
+		parent::parse($segments);
 		if($segments[ 0 ] === $this->app->getMenu()->getActive()->alias)
 		{
 			return [ 'view' => 'home' ];
@@ -75,11 +64,8 @@ class HomeRouter extends RouterView
  */
 function homeBuildRoute(&$query)
 {
-	$router = new HomeRouter($this->app, $this->app->getMenu());
-
-	return $router->build($query);
+	return (new HomeRouter($this->app, $this->app->getMenu()))->build($query);
 }
-
 
 /**
  * @return array
@@ -88,7 +74,5 @@ function homeBuildRoute(&$query)
  */
 function homeParseRoute()
 {
-	$router = new HomeRouter($this->app, $this->app->getMenu());
-
-	return $router->parse($segments);
+	return (new HomeRouter($this->app, $this->app->getMenu()))->parse($segments);
 }
