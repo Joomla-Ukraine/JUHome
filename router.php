@@ -1,7 +1,7 @@
 <?php
 /**
- * @since          3.0
- * @version        3.x
+ * @since          4.0
+ * @version        4.x
  * @author         Denys D. Nosov (denys@joomla-ua.org)
  * @copyright (C)  2011-2020 by Denys D. Nosov (https://joomla-ua.org)
  * @license        GNU General Public License version 2 or later
@@ -20,7 +20,7 @@ class HomeRouter extends RouterView
 	 *
 	 * @return array
 	 *
-	 * @since 1.0
+	 * @since 4.0
 	 */
 	public function build(&$query)
 	{
@@ -38,7 +38,7 @@ class HomeRouter extends RouterView
 	 *
 	 * @return array
 	 *
-	 * @since 1.0
+	 * @since 4.0
 	 */
 	public function parse(&$segments)
 	{

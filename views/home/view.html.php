@@ -1,7 +1,7 @@
 <?php
 /**
- * @package        JUHome Component
- * @version        3.x
+ * @since          4.0
+ * @version        4.x
  * @author         Denys D. Nosov (denys@joomla-ua.org)
  * @copyright (C)  2011-2020 by Denys D. Nosov (https://joomla-ua.org)
  * @license        GNU General Public License version 2 or later
@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 /**
  * Wrapper view class.
  *
- * @since  3.0
+ * @since  4.0
  */
 class HomeViewHome extends HtmlView
 {
@@ -37,7 +37,7 @@ class HomeViewHome extends HtmlView
 	 *
 	 *
 	 * @return bool|string
-	 * @since 3.0
+	 * @since 4.0
 	 */
 	public function display($tpl = null)
 	{
