@@ -6,7 +6,7 @@
  * @copyright (C)  2011-2025 by Denys D. Nosov (https://joomla-ua.org)
  * @license        GNU General Public License version 2 or later
  *
- * @since          3.0
+ * @package        JUHome Component
  */
 
 use Joomla\CMS\Factory;
