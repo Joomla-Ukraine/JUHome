@@ -18,4 +18,5 @@
 		<filename>home.xml</filename>
 		<folder>views</folder>
 	</files>
+	<administration></administration>
 </extension>

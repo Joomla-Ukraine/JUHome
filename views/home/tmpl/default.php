@@ -9,13 +9,10 @@
  * @since          3.0
  */
 
+use Joomla\CMS\Layout\FileLayout;
+
 defined('_JEXEC') or die;
 
-$load = new HomeViewHome();
-
-if($this->params->get('display_title'))
-{
-	echo '<h1>' . $this->params->get('page_title') . '</h1>';
-}
-
-echo $load->LoadPositionForHome($home->mod_name_pref, $style = ($home->style ? : 'raw'));
+echo (new FileLayout('home.' . $home->mod_name_pref))->render([
+	'this' => $this
+]);

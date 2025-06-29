@@ -80,8 +80,8 @@ class HomeViewHome extends HtmlView
 		$layoutpath = JPATH_SITE . '/components/com_home/views/home/tmpl/' . $template;
 
 		$home                = new stdClass();
-		$home->mod_name_pref = trim($this->params->get('mod_name_pref', ''));
-		$home->style         = trim($this->params->get('style', ''));
+		$home->mod_name_pref = trim($this->params->get('mod_name_pref'));
+		$home->style         = trim($this->params->get('style'));
 
 		$this->pageclass_sfx = htmlspecialchars($this->params->get('pageclass_sfx'));
 
@@ -95,35 +95,15 @@ class HomeViewHome extends HtmlView
 			if(file_exists($layoutpath))
 			{
 				require_once $layoutpath;
+		if(file_exists($layoutpath))
+		{
+			require_once $layoutpath;
 
-				return true;
-			}
-
-			$html = Text::_("<strong>Template <span style=\"color: green;\">$template</span> do is not found!</strong><br />Please, upload new template to <em>components/com_home/views/home/tmpl</em> folder or select other template from back-end!");
+			return true;
 		}
+
+		$html = Text::_("<strong>Template <span style=\"color: green;\">$template</span> do is not found!</strong><br />Please, upload new template to <em>components/com_home/views/home/tmpl</em> folder or select other template from back-end!");
 
 		return $html;
-	}
-
-	/**
-	 * @param     $position
-	 * @param   int  $style
-	 *
-	 * @return string
-	 *
-	 * @since 3.0
-	 */
-	public function LoadPositionForHome($position, int $style = -2)
-	{
-		$renderer = $this->doc->loadRenderer('module');
-		$params   = [ 'style' => $style ];
-		$contents = '';
-
-		foreach(ModuleHelper::getModules($position) as $mod)
-		{
-			$contents .= $renderer->render($mod, $params);
-		}
-
-		return $contents;
 	}
 }

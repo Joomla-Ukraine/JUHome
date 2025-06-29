@@ -54,25 +54,3 @@ class HomeRouter extends RouterView
 
 	}
 }
-
-/**
- * @param $query
- *
- * @return array
- *
- * @since 1.0
- */
-function homeBuildRoute(&$query)
-{
-	return (new HomeRouter($this->app, $this->app->getMenu()))->build($query);
-}
-
-/**
- * @return array
- *
- * @since 1.0
- */
-function homeParseRoute()
-{
-	return (new HomeRouter($this->app, $this->app->getMenu()))->parse($segments);
-}
