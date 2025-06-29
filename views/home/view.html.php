@@ -85,16 +85,6 @@ class HomeViewHome extends HtmlView
 
 		$this->pageclass_sfx = htmlspecialchars($this->params->get('pageclass_sfx'));
 
-		if($pos = $this->app->input->post->get('pos'))
-		{
-			$this->app->input->post->get('tmpl', 'none');
-			$html = $this->LoadPositionForHome($pos, $style = 'raw');
-		}
-		else
-		{
-			if(file_exists($layoutpath))
-			{
-				require_once $layoutpath;
 		if(file_exists($layoutpath))
 		{
 			require_once $layoutpath;

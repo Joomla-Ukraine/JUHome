@@ -15,8 +15,6 @@ defined('_JEXEC') or die;
 
 class HomeRouter extends RouterView
 {
-	protected bool $noIDs = false;
-
 	/**
 	 * @param $query
 	 *
