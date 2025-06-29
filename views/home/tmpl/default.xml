@@ -29,7 +29,7 @@
             <field
 		            name="mod_name_pref"
 		            type="text"
-		            label="Module name pref."
+		            label="Template name in folder layout/home"
 		            size="20"
             />
 
