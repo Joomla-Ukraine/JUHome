@@ -34,13 +34,6 @@
             />
 
             <field
-		            name="style"
-		            type="text"
-		            label="Module style"
-		            size="20"
-            />
-
-            <field
 		            name="template"
 		            type="filelist"
 		            default="default.php"
