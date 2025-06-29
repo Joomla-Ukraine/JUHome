@@ -28,12 +28,12 @@ class HomeViewHome extends HtmlView
 		parent::__construct($config);
 
 		$this->app    = Factory::getApplication();
-		$this->doc    = Factory::getDocument();
+		$this->doc    = $this->app->getDocument();
 		$this->params = $this->app->getParams();
 	}
 
 	/**
-	 * @param null $tpl
+	 * @param   null  $tpl
 	 *
 	 *
 	 * @return bool|string
@@ -41,8 +41,6 @@ class HomeViewHome extends HtmlView
 	 */
 	public function display($tpl = null)
 	{
-		parent::display($tpl);
-
 		$show_title = $this->params->get('show_page_heading');
 		$title      = $this->params->get('page_title', '');
 
@@ -52,38 +50,38 @@ class HomeViewHome extends HtmlView
 		}
 		elseif($this->app->get('sitename_pagetitles', 0))
 		{
-			$title = Text::sprintf('JPAGETITLE', $this->app->get('sitename'), $title);
+			$title = Text::sprintf('JPAGETITLE', $title, $this->app->get('sitename'));
 		}
 		elseif($this->app->get('sitename_pagetitles', 0) == 2)
 		{
-			$title = Text::sprintf('JPAGETITLE', $title, $app->get('sitename'));
+			$title = Text::sprintf('JPAGETITLE', $this->app->get('sitename'), $title);
 		}
 
-		$this->document->setTitle($title);
+		$this->doc->setTitle($title);
 
 		if($this->params->get('menu-meta_description'))
 		{
-			$this->document->setDescription($this->params->get('menu-meta_description'));
+			$this->doc->setDescription($this->params->get('menu-meta_description'));
 		}
 
 		if($this->params->get('menu-meta_keywords'))
 		{
-			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+			$this->doc->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
 		}
 
 		if($this->params->get('robots'))
 		{
-			$this->document->setMetadata('robots', $this->params->get('robots'));
+			$this->doc->setMetadata('robots', $this->params->get('robots'));
 		}
 
 		$template   = trim($this->params->get('template', ''));
 		$layoutpath = JPATH_SITE . '/components/com_home/views/home/tmpl/' . $template;
 
 		$home                = new stdClass();
-		$home->mod_name_pref = trim($this->params->get('mod_name_pref'));
-		$home->style         = trim($this->params->get('style'));
+		$home->mod_name_pref = trim($this->params->get('mod_name_pref', ''));
+		$home->style         = trim($this->params->get('style', ''));
 
-		$this->pageclass_sfx = htmlspecialchars($this->params->get('pageclass_sfx'));
+		$this->pageclass_sfx = ($this->params->get('pageclass_sfx') ? htmlspecialchars($this->params->get('pageclass_sfx')) : '');
 
 		if(file_exists($layoutpath))
 		{
@@ -92,8 +90,6 @@ class HomeViewHome extends HtmlView
 			return true;
 		}
 
-		$html = Text::_("<strong>Template <span style=\"color: green;\">$template</span> do is not found!</strong><br />Please, upload new template to <em>components/com_home/views/home/tmpl</em> folder or select other template from back-end!");
-
-		return $html;
+		return Text::_("<strong>Template <span style=\"color: green;\">$template</span> do is not found!</strong><br />Please, upload new template to <em>components/com_home/views/home/tmpl</em> folder or select other template from back-end!");
 	}
 }

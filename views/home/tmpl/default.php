@@ -13,6 +13,4 @@ use Joomla\CMS\Layout\FileLayout;
 
 defined('_JEXEC') or die;
 
-echo (new FileLayout('home.' . $home->mod_name_pref))->render([
-	'this' => $this
-]);
+echo (new FileLayout('home.' . $home->mod_name_pref))->render();
